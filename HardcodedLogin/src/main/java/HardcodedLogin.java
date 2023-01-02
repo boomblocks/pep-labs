@@ -15,6 +15,11 @@ public class HardcodedLogin {
      * @return true if there is a successful login, and false otherwise.
      */
     public boolean login(String username, String password){
+        switch(username){
+            case "admin": if(password == "qwerty"){return true;} break;
+            case "user": if(password == "password"){return true;} break;
+            default: break;
+        }
         return false;
     }
 }
