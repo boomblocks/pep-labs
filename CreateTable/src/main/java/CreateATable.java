@@ -64,14 +64,18 @@ public class CreateATable {
      */
     public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
+        String request = "create table song(title varchar(100), artist varchar(100));";
 
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
             s.executeUpdate(sql);
+            s.execute(request);
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
     }
+
+    
 
 }
